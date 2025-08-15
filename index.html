@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DICOM Viewer</title>
+    <style>
+      #dicomImage {
+        width: 512px;
+        height: 512px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; justify-content: center; width: 100%">
+      <h1>DICOM Przykład</h1>
+      <div style="margin-left: 20px">
+        <div>
+          <input type="file" id="fileInput" />
+        </div>
+        <div>
+          <button id="loadButton">Load DICOM</button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        width: 100;
+        overflow: auto;
+        border: 1px solid #333;
+        cursor: grab;
+      "
+    >
+      <div
+        id="dicomContainer"
+        style="
+          width: 600px;
+          height: 600px;
+          overflow: auto;
+          border: 1px solid #333;
+          cursor: grab;
+        "
+      >
+        <div
+          id="dicomImage"
+          style="width: 512px; height: 512px; background: black; "
+        ></div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; width: 100%">
+      <div id="controls">
+        <div>
+          <label
+            >Brightness:
+            <input
+              type="range"
+              id="brightnessSlider"
+              min="-100"
+              max="100"
+              value="0"
+          /></label>
+        </div>
+        <div>
+          <label
+            >Contrast:
+            <input
+              type="range"
+              id="contrastSlider"
+              min="-100"
+              max="100"
+              value="0"
+          /></label>
+        </div>
+        <div>
+          <button id="zoomIn">Przybliż</button>
+          <button id="zoomOut">Oddal</button>
+        </div>
+        <div>
+          <button id="rotateLeft">Obrót lewo</button>
+          <button id="rotateRight">Obrót prawo</button>
+        </div>
+<div>
+  <button id="mirror">Mirror Image</button>
+</div>
+        <div>
+          <button id="invert">Zamień kolory</button>
+        </div>
+
+        <div id="metadata">
+          <h3>DICOM Dane:</h3>
+          <ul id="dicomData"></ul>
+        </div>
+      </div>
+    </div>
+ <script type="module" src="/src/dicom-viewer.js"></script>
+   <!-- <script type="module" src="/src/Dicom.js"></script>  --> 
+  </body>
+</html>
